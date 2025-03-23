@@ -38,6 +38,29 @@ class UserService{
 
         return axios.post(USER_API_BASE_URL + "/addItem", params);
     }
+
+    removeItem(itemId){
+        const params = new URLSearchParams();
+        console.log(sessionStorage.getItem("userId"))
+        params.append("userId", parseFloat(sessionStorage.getItem("userId")));
+        params.append("itemId", parseFloat(itemId));
+
+        return axios.post(USER_API_BASE_URL + "/removeItem", params);
+    }
+
+    getItems(){
+        const params = new URLSearchParams();
+        console.log(sessionStorage.getItem("userId"))
+        params.append("userId", parseFloat(sessionStorage.getItem("userId")));
+
+        return axios.post(USER_API_BASE_URL + "/getItems", params);
+    }
+
+    checkout() {
+        const params = new URLSearchParams();
+        params.append("userId", parseFloat(sessionStorage.getItem("userId")));
+        return axios.post('http://localhost:8080/api/checkout', params);
+    }
 }
 
 export default new UserService()

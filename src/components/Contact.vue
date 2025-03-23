@@ -1,46 +1,29 @@
 <template>
-    <div class="container">
-        <h1 class="text-center">
-            Users List
-        </h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>UserId</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="user in users" :key="user.id">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="container" style="display: flex; justify-content: space-around; margin: 10vh">
+        <div style="width: 30%">
+            <img src="https://i0.wp.com/dirt.asla.org/wp-content/uploads/2023/01/beltline-map.jpg?ssl=1" alt="" style="width: 30vw; margin-left: 5vw;">
+        </div>
+        <div style="width: 70%; text-align: center;">
+            <h1 class="text-center" style="font-size: 40px; color: #A24F4F; margin-bottom: 8vh; margin-top: 7vh; font-weight: 800;">
+                CONTACT US
+            </h1>
+            <div class="textprompt">
+                <span style="font-weight: 600; margin-right: 30px;">Number: </span>
+                (xxx)xxx-xxxx
+            </div>
+            <div class="textprompt" style="margin-top: 4vh;">
+                <span style="font-weight: 600; margin-right: 30px;">Email: </span>
+                email@example.com
+            </div>
+            <div class="textprompt" style="margin-top: 4vh;">
+                <span style="font-weight: 600; margin-right: 30px;">Address: </span>
+                1111 xxxxx Road, xxxx, xx, 00000
+            </div>
+        </div>
+        
+        
         <a href="/"></a>
 
-        <h2>Sign Up</h2>
-        <form @submit.prevent="addUser">
-            <div style="padding-bottom: 10px;">
-                Username:
-                <input type="text" v-model="username" required />
-            </div>
-            <div>
-                Password:
-                <input type="password" v-model="password" required />
-            </div>
-
-            <button type="submit">Add User</button>
-        </form>
-        <form @submit.prevent="deleteUser">
-            <div style="padding-bottom: 10px;">
-                UserId:
-                <input type="number" v-model="userid" required />
-            </div>
-            <button type="submit">Delete User</button>
-        </form>
         
     </div>
 </template>

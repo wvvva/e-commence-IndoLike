@@ -8,6 +8,8 @@ import Catalog from '@/components/Catalog.vue';
 import Contact from '@/components/Contact.vue';
 import Cart from '@/components/Cart.vue';
 
+
+
 const routes = [
   { path: '/', component: Home },
   { path: '/Login', component: Login },

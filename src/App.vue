@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <nav>
-        <div style="width: 80px; height: 30px; margin-left: 10vw; margin-top: 60px"></div>
+        <div style="width: 80px; height: 30px; margin-left: 5vw; margin-top: 20px">
+          <img :src="logo" alt="" style="width: 60px; height: 60px;">
+        </div>
         <router-link to="/" style="  margin-top: 60px;">HOME</router-link>
         <router-link to="/Catalog" style="  margin-top: 60px;">CATALOG</router-link>
         <router-link to="/Contact" style="  margin-top: 60px;">CONTACT</router-link>
-        <div v-if="username" class="user-container" @click="toggleDrawer" style="margin-right: 5vw; margin-left: 10vw;">
+        <div v-if="username" class="user-container" @click="toggleDrawer" style="margin-right: 5vw; margin-left: 8vw;">
           <span class="loginLink" style="color: #FFF1F1; letter-spacing: 2px; font-style: italic; text-decoration: underline;">Hi, {{ username }}</span>
           <div v-if="showDrawer" class="drawer">
             <span @click="cart">My Cart</span>
@@ -13,7 +15,7 @@
           </div>
         </div>
 
-        <div v-else class="loginButton" style="margin-right: 5vw; margin-left: 10vw; margin-top: 55px;">
+        <div v-else class="loginButton" style="margin-right: 5vw; margin-left: 8vw; margin-top: 55px;">
           <router-link class="loginLink" to="/Login" >Login</router-link>
         </div>
     </nav>
@@ -24,12 +26,14 @@
 </template>
 
 <script>
+import logo from '@/assets/images/logo.png';
 export default {
   name: 'App',
   data() {
     return {
       username: sessionStorage.getItem('username') || null, 
-      showDrawer: false
+      showDrawer: false,
+      logo: logo
     };
   },
   methods: {

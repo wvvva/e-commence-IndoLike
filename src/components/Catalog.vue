@@ -11,23 +11,23 @@
                 v-for="(item, index) in items.slice(0, 6)" 
                 :key="index" 
                 class="item"
-                style="display: inline-block; margin: 30px; justify-content:space-between;">
+                style="display: inline-block; margin: 2vw; justify-content:space-between;">
                 <div >
                     <img 
-                        style="width: 15vw; height: 15vw; background-color: #5B5B5B" 
+                        style="width: 15vw; height: 15vw; background-color: #5B5B5B" :src="item.imageUrl"
                     />
                     <div style="display: flex; justify-content: space-between; margin-top: 10px;">
                         
-                        <span class="textprompt" >
+                        <span class="textprompt" style="width: 8vw; height: 8vw; font-size: 13px;">
                             {{ item.itemName }}
                         </span>
                         <span class="textprompt" >
-                            ${{ item.price }}
+                            ${{ (item.price / 100).toFixed(2) }}
                         </span>
                         <button v-if="username" @click="addItem(item)" style="width: 30px; height: 30px; border-radius: 15px; border: none; background-color: #CA9191; color: #FFFAFA; margin-top: 5px;">+</button>
                     </div>
                     <div class="textprompt" style="font-size: 10px; letter-spacing: 1px; margin-top: 0px;">
-                        {{ item.quantity }} of this are still in stock
+                        {{ item.quantity }} of this item are still in stock
                     </div>
                 </div>
                 
